@@ -9,7 +9,8 @@ public class HomeTest extends BaseTest {
 	@Test
 	public void testModuleNavigation() {
 		
-		new HomePage().menutoHeaderValidation();
+		new HomePage()
+		.menutoHeaderValidation();
 	}
 
 }
