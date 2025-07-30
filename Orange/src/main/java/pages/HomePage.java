@@ -40,7 +40,7 @@ public final class HomePage extends BasePage {
 			click(menuLocator, WaitStrategy.CLICKABLE);
 			
 			if(menuLocator.equals(headerLocator)) {
-				ExtentLogger.info("Header Verification Passed");
+				ExtentLogger.info("Header Verification Passed :"+headerLocator);
 			}else {
 				ExtentLogger.info("Header Verification Failed :"+headerLocator);
 			}
