@@ -1,7 +1,7 @@
 package tests;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
 import driver.DriverManager;
@@ -14,14 +14,14 @@ public class BaseTest {
 	
 	protected BaseTest() {}
 	
-	@BeforeMethod
+	@BeforeSuite
 	public void setUp() {
 		DriverManager.initDriver(BrowserType.CHROME);
 		DriverManager.getDriver().get(PropertyUtils.get("url"));
 
 	}
 	
-	@AfterMethod
+	@AfterSuite
 	public void tearDown() {
 		DriverManager.quitDriver();
 	}

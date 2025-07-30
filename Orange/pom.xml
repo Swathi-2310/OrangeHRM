@@ -5,6 +5,8 @@
 	<groupId>Hrm</groupId>
 	<artifactId>Orange</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	
 	<dependencies>
 
 		<dependency>
@@ -27,7 +29,7 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>7.10.2</version>
+			<version>7.11.0</version>
 		</dependency>
 
 		<dependency>

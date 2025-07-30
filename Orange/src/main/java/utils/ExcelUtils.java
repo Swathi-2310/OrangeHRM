@@ -27,10 +27,10 @@ public class ExcelUtils {
 		int colCount = sheet.getRow(0).getLastCellNum();
 
 		Object[] data = new Object[rowCount];
-		Map<String, String> map;
 
 		for (int i = 1; i <= rowCount; i++) {
-			map = new HashMap<>();
+			Map<String, String> map = new HashMap<>();
+			
 			for (int j = 0; j < colCount; j++) {
 				String key = sheet.getRow(0).getCell(j).getStringCellValue();
 				String value = sheet.getRow(i).getCell(j).getStringCellValue();
