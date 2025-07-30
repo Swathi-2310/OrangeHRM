@@ -36,15 +36,11 @@ public final class HomePage extends BasePage {
 			
 			By menuLocator = By.xpath(String.format(sideMenuXPath, sideMenu));
 			By headerLocator = By.xpath(String.format(headerXPath, expectedHeader));
-			By adminAccessPassword = By.xpath("//input[@name='password']");
 			
 			click(menuLocator, WaitStrategy.CLICKABLE);
 			
 			if(menuLocator.equals(headerLocator)) {
 				ExtentLogger.info("Header Verification Passed");
-			}else if(menuLocator.equals("Maintenance")) {
-				sendKeys(adminAccessPassword, "admin123", WaitStrategy.PRESENCE);
-				ExtentLogger.info("Entered Administration Access Paswsword");
 			}else {
 				ExtentLogger.info("Header Verification Failed :"+headerLocator);
 			}
