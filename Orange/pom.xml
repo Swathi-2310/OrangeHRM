@@ -5,8 +5,8 @@
 	<groupId>Hrm</groupId>
 	<artifactId>Orange</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<build>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -28,7 +28,6 @@
 			<artifactId>selenium-java</artifactId>
 			<version>4.21.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
@@ -68,7 +67,6 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.24.3</version>
 		</dependency>
-
 
 	</dependencies>
 </project>
