@@ -12,6 +12,8 @@ public final class HomePage extends BasePage {
 
     private static final String sideMenuXPath = "//span[normalize-space()='%s']";
     private static final String headerXPath = "//h6[normalize-space()='%s']";
+    private static final By passwordInput = By.xpath("//input[@type='password']");
+    private static final By submitButton = By.xpath("//button[text()=' Confirm ']");
 	
 	public void menutoHeaderValidation() {
 		
@@ -39,11 +41,19 @@ public final class HomePage extends BasePage {
 			
 			click(menuLocator, WaitStrategy.CLICKABLE);
 			
-			if(menuLocator.equals(headerLocator)) {
-				ExtentLogger.info("Header Verification Passed :"+headerLocator);
-			}else {
-				ExtentLogger.info("Header Verification Failed :"+headerLocator);
-			}
+			if (sideMenu.equals("Maintenance")) {
+                // Handle password pop-up if Maintenance requires admin login
+                sendKeys(passwordInput, "admin123", WaitStrategy.VISIBLE);
+                click(submitButton, WaitStrategy.CLICKABLE);
+            }
+			
+			boolean headerVisible = isDisplayed(headerLocator, WaitStrategy.PRESENCE);
+
+            if (headerVisible) {
+                ExtentLogger.pass("Header Verification Passed: " + expectedHeader);
+            } else {
+                ExtentLogger.fail("Header Verification Failed: " + expectedHeader);
+            }
 		}
 		
 	}

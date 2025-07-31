@@ -26,4 +26,9 @@ public class BasePage {
     protected String getPageTitle() {
         return DriverManager.getDriver().getTitle();
     }
+    
+    protected boolean isDisplayed(By locator, WaitStrategy waitStrategy) {
+    	WebElement element = ExplicitWaitFactory.performExplicitWait(waitStrategy, locator);
+    	return element.isDisplayed();
+    }
 }
