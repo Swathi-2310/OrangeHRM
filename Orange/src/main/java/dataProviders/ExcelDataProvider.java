@@ -10,7 +10,7 @@ public final class ExcelDataProvider {
 
 	private ExcelDataProvider() {}
 	
-	@DataProvider(name="loginData")
+	@DataProvider(name="loginData1")
 	public static Object[] provideLoginData() throws IOException {
 		return ExcelUtils.getData("loginData");
 	}
